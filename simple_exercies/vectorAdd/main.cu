@@ -18,11 +18,11 @@ __global__ void vector_add(int* a, int* b, int* res, int num_elements) {
 }
 
 int main(int argc, char** argv) {
-    // Initialize Particles
     if (argc < 2) {
         std::cerr << "Usage: " << argv[0] << " <vector_length>" << std::endl;
         exit(1);
     }
+    // Initialize vectors
     int vector_len = atoi(argv[1]);
     int* operand_a = new int[vector_len];
     int* operand_b = new int[vector_len];
