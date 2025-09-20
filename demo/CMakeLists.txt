@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.11)
+project(demo)
+enable_language(CUDA)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED YES)
+
+add_executable(demo task_unsafe.cu)
+target_compile_features(demo PRIVATE cxx_std_14)
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -arch=sm_80")
+set_target_properties(demo PROPERTIES CUDA_ARCHITECTURES "80")
