@@ -8,3 +8,13 @@ add_executable(demo task_unsafe.cu)
 target_compile_features(demo PRIVATE cxx_std_14)
 set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -arch=sm_80")
 set_target_properties(demo PROPERTIES CUDA_ARCHITECTURES "80")
+
+project(demo_safe)
+enable_language(CUDA)
+set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_CXX_STANDARD_REQUIRED YES)
+
+add_executable(demo_safe task.cu)
+target_compile_features(demo_safe PRIVATE cxx_std_14)
+set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -arch=sm_80")
+set_target_properties(demo_safe PROPERTIES CUDA_ARCHITECTURES "80")
